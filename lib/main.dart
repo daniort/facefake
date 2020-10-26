@@ -1,4 +1,3 @@
-
 import 'package:facefake/screens/NewPost.dart';
 import 'package:facefake/widgets/widgets.dart';
 import 'package:firebase_database/firebase_database.dart';
@@ -51,22 +50,24 @@ class _MyHomePageState extends State<MyHomePage> {
               onPressed: () => print("menssenger")),
         ],
       ),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            GestureDetector(
-              onTap: () {
-                Navigator.push(context, MaterialPageRoute(builder: (context) {
-                  return NewPost();
-                }));
-              },
-              child: CreateNewPostContainer(),
-            ),
-            BarRooms(),
-            Stories(),
-            Post()
-          ],
-        ),
+      body: Column(
+        children: [
+          GestureDetector(
+            onTap: () {
+              Navigator.push(context, MaterialPageRoute(builder: (context) {
+                return NewPost();
+              }));
+            },
+            child: CreateNewPostContainer(),
+          ),
+          SizedBox(height: 4),
+          BarRooms(),
+          SizedBox(height: 4),
+          //Stories(),
+          
+            Expanded(child: Post()),
+          
+        ],
       ),
     );
   }

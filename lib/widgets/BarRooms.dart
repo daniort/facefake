@@ -7,18 +7,23 @@ class BarRooms extends StatelessWidget {
     return Container(
       height: 50,
       decoration: BoxDecoration(color: Colors.white),
-      child: ListView.builder(
-        scrollDirection: Axis.horizontal,
-        itemCount: 15,
-        itemBuilder: (BuildContext context, int index) {
-          if (index == 0) {
-           return Padding(padding: const EdgeInsets.all(8.0), child: _newRoom());
-          }
-          return Padding(
+      child: Row(
+        children: [
+          Padding(padding: const EdgeInsets.all(8.0), child: _newRoom()),
+          Padding(
             padding: const EdgeInsets.only(left: 10.0),
             child: _usersActive(),
-          );
-        },
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0),
+            child: _usersActive(),
+          ),
+          Padding(
+            padding: const EdgeInsets.only(left: 10.0),
+            child: _usersActive(),
+          ),
+        
+        ],
       ),
     );
   }

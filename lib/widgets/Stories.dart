@@ -7,21 +7,29 @@ class Stories extends StatelessWidget {
     return Container(
       height: 180,
       decoration: BoxDecoration(color: Colors.white),
-      child: ListView.builder(
-          scrollDirection: Axis.horizontal,
-          itemCount: 6,
-          itemBuilder: (BuildContext context, int index) {
-            if (index == 0) {
-              return Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: _newStory(),
-              );
-            }
-            return Padding(
-              padding: const EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
-              child: _otherStory(),
-            );
-          }),
+      child: SingleChildScrollView(
+        scrollDirection: Axis.horizontal,
+              child: Row(
+          children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: _newStory(),
+                ),
+                Padding(
+                padding: const EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
+                child: _otherStory(),
+              ),
+               Padding(
+                padding: const EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
+                child: _otherStory(),
+              ),
+               Padding(
+                padding: const EdgeInsets.only(left: 8.0, top: 8.0, bottom: 8.0),
+                child: _otherStory(),
+              ),
+          ]
+    ),
+      ),
     );
   }
 }

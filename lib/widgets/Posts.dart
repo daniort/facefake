@@ -10,32 +10,28 @@ class Post extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return StreamBuilder(
-      stream: realDB.reference().child('posts').onValue,
-      builder: (BuildContext context, snap) {
-        if (snap.hasError) return new Text('Error: ${snap.error}');
-        switch (snap.connectionState) {
-          case ConnectionState.waiting:
-            return Text('Cargando...');
-          default:
-            if (snap.data.snapshot.value != null) {
-              print("??????????????????=======");
-              Map data = snap.data.snapshot.value;
-              print(data);
-              List item = [];
-              print(data);
-              data.forEach((index, data) => item.add({"key": index, ...data}));
-              // return _onePost();
-
-              return ListView.builder(
-                  scrollDirection: Axis.vertical,
-                  shrinkWrap: true,
-                  itemCount: item.length,
-                  itemBuilder: (context, index) {
-                    return _onePost(item[index]['content'],item[index]['url']);
-                  });
-            }
-        }
-      },
+        stream: realDB.reference().child('posts').onValue,
+        builder: (BuildContext context, snap) {
+          if (snap.hasError) return new Text('Error: ${snap.error}');
+          switch (snap.connectionState) {
+            case ConnectionState.waiting:
+              return Text('Cargando...');
+            default:
+              if (snap.data.snapshot.value != null) {
+                Map data = snap.data.snapshot.value;
+                List item = [];
+                data.forEach((index, data) => item.add({"key": index, ...data}));
+                return ListView.builder(
+                    scrollDirection: Axis.vertical,
+                    shrinkWrap: true,
+                    itemCount: item.length,
+                    itemBuilder: (context, index) {
+                      return _onePost(item[index]['content'], item[index]['url']);
+                    });
+              }
+          }
+        },
+      
     );
   }
 }
