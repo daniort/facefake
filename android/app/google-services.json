@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "187163380172",
+    "firebase_url": "https://facefake-8c326.firebaseio.com",
+    "project_id": "facefake-8c326",
+    "storage_bucket": "facefake-8c326.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:187163380172:android:9d32796911e953e31ff569",
+        "android_client_info": {
+          "package_name": "com.space.facefake"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "187163380172-h47gs23v0pbdap6v7jmk3rj657u6iql1.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDvjI56N5ykb88s0jow4z0NYTpUZUsTTb4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "187163380172-h47gs23v0pbdap6v7jmk3rj657u6iql1.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
